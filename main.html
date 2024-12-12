@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Shop</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <script defer src="scripts/order-management.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/zeus.png" alt="Zeus" class="logo">
+        <div class="nav-bar">
+            <div class="search-bar">
+                <form action="search-results.html" method="GET">
+                    <input type="text" name="query" placeholder="Search">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+            <ul class="menu-bar">
+                <li><a href="men.html">Mens</a></li>
+                <li><a href="womens.html">Womens</a></li>
+                <li><a href="teens.html">Teens and Kids</a></li>
+                <li><a href="accessories.html">Accessories</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/unisex-heavy-blend-hoodie-black-back-667b213543a8b.png" alt="Black Hoodie">
+                    <h3>Black Hoodie</h3>
+                    <p>Price: $29.99</p>
+                    <button class="add-to-cart" data-name="Black Hoodie" data-price="29.99" data-image="images/unisex-heavy-blend-hoodie-black-back-667b213543a8b.png">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/unisex-heavy-blend-hoodie-black-back-667b213543a8b.png" alt="White Hoodie">
+                    <h3>White Hoodie</h3>
+                    <p>Price: $34.99</p>
+                    <button class="add-to-cart" data-name="White Hoodie" data-price="34.99" data-image="images/unisex-heavy-blend-hoodie-black-back-667b213543a8b.png">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="images/unisex-heavy-blend-hoodie-black-back-667b213543a8b.png" alt="Gray Hoodie">
+                    <h3>Gray Hoodie</h3>
+                    <p>Price: $32.99</p>
+                    <button class="add-to-cart" data-name="Gray Hoodie" data-price="32.99" data-image="images/unisex-heavy-blend-hoodie-black-back-667b213543a8b.png">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="promo-banner">
+            <h2>Summer Sale!</h2>
+            <p>Save up to 30% on selected items. Limited time offer.</p>
+            <a href="sale.html">Shop Now</a>
+        </section>
+
+        <section class="about-us">
+            <h2>About Us</h2>
+            <p>Welcome to Sports Shop, your ultimate destination for sports apparel and accessories. We strive to provide high-quality products for athletes of all ages and skill levels.</p>
+            <a href="about.html">Learn More</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-menu">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2024 Sports Shop. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Add event listener to add items to cart
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function () {
+                const item = {
+                    name: this.getAttribute('data-name'),
+                    price: parseFloat(this.getAttribute('data-price')),
+                    image: this.getAttribute('data-image')
+                };
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${item.name} has been added to your cart!`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
