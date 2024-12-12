@@ -162,9 +162,9 @@ main {
 }
 
 .cart-item-image {
-    width: 80px; /* Adjust this value as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
+    width: 80px;
+    height: auto; 
+    margin-right: 10px; 
 }
 
 .promo-banner a {
@@ -222,42 +222,31 @@ footer {
 .footer-content {
     max-width: 960px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;  /* Space out the content evenly */
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;  /* Allow items to wrap on smaller screens */
 }
 
 .footer-menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;  /* Display the menu items inline */
-    flex-wrap: wrap;  /* Allow wrapping for small screens */
-    justify-content: center;
 }
 
 .footer-menu li {
     display: inline-block;
-    margin-right: 15px;
+    margin-right: 10px;
+    justify-content: center;
 }
 
 .footer-menu a {
     color: #fff;
     text-decoration: none;
-    padding: 5px 10px; /* Add padding for better spacing */
 }
 
 .footer-menu a:hover {
     text-decoration: underline;
 }
 
-.footer-bottom {
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-/* Icon styles */
 .icon-link {
     margin-right: 10px;
 }
@@ -266,35 +255,6 @@ footer {
     width: 30px;
     height: 30px;
 }
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;  /* Stack content vertically on smaller screens */
-        align-items: center;
-    }
-
-    .footer-menu {
-        justify-content: center;
-    }
-
-    .footer-menu li {
-        margin-right: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-menu li {
-        margin-bottom: 10px;
-    }
-
-    .footer-bottom {
-        font-size: 1rem;  /* Increase font size for small screens */
-    }
-}
-
-
-
 
 /* Responsive design */
 @media (max-width: 768px) {
